@@ -1,0 +1,67 @@
+{
+  "total": 3,
+  "items": [
+    {
+      "id": "c7a8b411-e402-4bb3-9d18-29cf638ba412",
+      "document_id": "93f0b2f7-727c-47ea-bd56-62118314ba55",
+      "question_number": "1",
+      "question_text": "Which of the following sorting algorithms has the best worst-case time complexity?",
+      "question_type": "MCQ",
+      "options": [
+        {"key": "A", "text": "Quick Sort"},
+        {"key": "B", "text": "Merge Sort"},
+        {"key": "C", "text": "Bubble Sort"},
+        {"key": "D", "text": "Insertion Sort"}
+      ],
+      "answer": "B",
+      "answer_source": "SAME_DOCUMENT",
+      "answer_confidence": 0.95,
+      "source_pages": [1],
+      "is_cross_page": false,
+      "confidence": 0.98,
+      "extraction_status": "EXTRACTED",
+      "has_image": false,
+      "has_table": false,
+      "extraction_notes": "Extracted cleanly from section 1 with verified answer key match."
+    },
+    {
+      "id": "e4f8d223-91b3-4f8a-92cc-8109d94821a3",
+      "document_id": "93f0b2f7-727c-47ea-bd56-62118314ba55",
+      "question_number": "2",
+      "question_text": "Explain the difference between process and thread in modern operating systems, addressing context switching overhead and shared memory space.",
+      "question_type": "LONG_ANSWER",
+      "options": [],
+      "answer": null,
+      "answer_source": "NOT_FOUND",
+      "answer_confidence": 0.0,
+      "source_pages": [1, 2],
+      "is_cross_page": true,
+      "confidence": 0.89,
+      "extraction_status": "EXTRACTED",
+      "has_image": false,
+      "has_table": false,
+      "extraction_notes": "Question text spans across page 1 and page 2; continuous sentence stitched."
+    },
+    {
+      "id": "f8a1e552-33d1-4cb5-829b-0193bb291244",
+      "document_id": "93f0b2f7-727c-47ea-bd56-62118314ba55",
+      "question_number": "3",
+      "question_text": "Consider the logic circuit shown in the diagram. When input A=1 and B=0, the output Y is:",
+      "question_type": "MCQ",
+      "options": [
+        {"key": "A", "text": "0"},
+        {"key": "B", "text": "1"}
+      ],
+      "answer": "A",
+      "answer_source": "SAME_DOCUMENT",
+      "answer_confidence": 0.80,
+      "source_pages": [2],
+      "is_cross_page": false,
+      "confidence": 0.65,
+      "extraction_status": "REVIEW_REQUIRED",
+      "has_image": true,
+      "has_table": false,
+      "extraction_notes": "Embedded circuit diagram detected. Low confidence on diagram-dependent context."
+    }
+  ]
+}

@@ -83,12 +83,28 @@ uvicorn app.main:app --reload
 
 ---
 
+## Deliverables Overview
+
+| Deliverable | Location | Description |
+| :--- | :--- | :--- |
+| **1. Source Code** | `app/` | Complete FastAPI backend, Celery workers, and OCR/AI services |
+| **2. Database Schema & Migrations** | `migrations/`, `app/models/` | Alembic async migrations and SQLAlchemy 2.0 ORM models |
+| **3. Sample Input Documents** | `sample_documents/` | Multi-page exam PDF, question image, and separate answer key |
+| **4. Sample Extracted Output** | `sample_output/` | Structured JSON output representing clean & review-required data |
+| **5. Setup & Configuration** | `README.md`, `.env.example` | Clear environment setup and single-command Docker launch |
+| **6. Architecture Documentation** | `docs/ARCHITECTURE.md` | In-depth design documentation with Mermaid architecture diagrams |
+| **7. Automated Tests** | `tests/` | Pytest test suite covering auth and document processing |
+| **8. Postman Collection** | `postman/question_extraction_api.json` | Ready-to-import Postman collection covering all workflows |
+| **9. OpenAPI / Swagger Spec** | `docs/openapi.json`, `/docs` | Interactive Swagger UI and exported OpenAPI 3.0 JSON specification |
+
+---
+
 ## Testing
 
-To run the automated tests (uses an in-memory SQLite database):
+Run automated tests directly inside the Docker container:
 
 ```bash
-pytest
+docker exec -e PYTHONPATH=. pbnc-api-1 pytest
 ```
 
 ---
@@ -103,4 +119,4 @@ pytest
 6. `GET /documents/{document_id}/questions` to retrieve the extracted questions.
 7. `GET /documents/{document_id}/warnings` to view any extraction issues requiring review.
 
-See `/docs` (Swagger UI) for the full OpenAPI specification.
+See `/docs` (Swagger UI) for the interactive documentation.

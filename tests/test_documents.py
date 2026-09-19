@@ -1,7 +1,8 @@
 import pytest
+import pytest_asyncio
 from httpx import AsyncClient
 
-@pytest.fixture
+@pytest_asyncio.fixture
 async def auth_token(client: AsyncClient) -> str:
     response = await client.post(
         "/auth/register",

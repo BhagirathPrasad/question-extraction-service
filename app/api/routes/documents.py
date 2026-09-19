@@ -11,6 +11,7 @@ from fastapi import (
     Form,
     HTTPException,
     Query,
+    Response,
     UploadFile,
     status,
 )
@@ -251,13 +252,14 @@ async def get_document_warnings(
 @router.delete(
     "/{document_id}",
     status_code=status.HTTP_204_NO_CONTENT,
+    response_class=Response,
     summary="Delete a document and all extracted data",
 )
 async def delete_document(
     document_id: uuid.UUID,
     current_user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
-) -> None:
+):
     """
     Permanently delete a document, its questions, warnings, and stored file.
     This action is irreversible.
@@ -268,6 +270,8 @@ async def delete_document(
     storage.delete_file(doc.file_path)
 
     await db.delete(doc)
+    await db.commit()
+    return Response(status_code=status.HTTP_204_NO_CONTENT)
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
